@@ -1,0 +1,146 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #331a38;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    margin: 4%;
+    font-size: 3em;
+}
+
+#navbar {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 10vw;
+    padding-right: 2%;
+    padding-left: 2%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#menu-list {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.menu {
+    font-size: 1em;
+    white-space: nowrap;
+}
+
+.menu:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.icones {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#botao-menu {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #6f3460;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6em;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+@media screen and (max-width: 999px){
+
+    header {
+        overflow:visible;
+    }
+    #botao-menu {
+        display: flex;
+    }
+    #navbar {
+        display: none;
+        overflow: hidden;
+        padding: 0;
+        height: 25vh;
+        width: 30vw;
+        background-color: #6f3460;
+        animation-name: abre;
+        animation-duration: 0.8s;
+        position: absolute;
+        top: 10vh;
+        z-index: -1;
+    }
+
+
+    @keyframes abre {
+        from {
+            width: 0;
+        } to {
+            width: 30vw;
+        } 
+    }
+
+    #menu-list {
+        position: absolute;
+        width: 100%;
+        top: 25%;
+        transform: translateY(-25%);
+        flex-direction: column;
+        justify-content:space-evenly;
+    }
+
+    .menu {
+        margin-top: 5%;
+    }
+
+    .icones {
+        display: none;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .menu {
+        display: none;
+    }
+    .icones {
+        display: flex;
+    }
+    .icones:hover {
+        width: 47px;
+        height: 47px;
+        transition: 0.5s;
+    }
+}
